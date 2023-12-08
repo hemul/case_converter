@@ -9,10 +9,7 @@ upperCaseBtn.addEventListener("click", upperCaseBtnHandler);
 lowerCaseBtn.addEventListener("click", lowerCaseBtnHandler);
 properCaseBtn.addEventListener("click", properCaseBtnHandler);
 sentenceCaseBtn.addEventListener("click", sentenceCaseBtnHandler);
-
-saveTextFileBtn.addEventListener('click', function(){
-    download("text.txt",textarea.value);
-} );
+saveTextFileBtn.addEventListener('click', saveTextFileBtnHandler);
 
 
 function upperCaseBtnHandler(){
@@ -68,6 +65,10 @@ function sentenceCaseBtnHandler(){
         paragraphs[i] = sentences.join('. ') + '.';
     }
     textarea.value = paragraphs.join('\n\n');
+}
+
+function saveTextFileBtnHandler(){
+    download("text.txt",textarea.value);
 }
 
 function splitTextToParagraphs(text){
